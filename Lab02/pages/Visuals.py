@@ -23,7 +23,7 @@ st.divider()
 # --- YOUR CODE GOES HERE ---
 def jasondynamic():
     all=[]
-    with open("data.json") as data:
+    with open("Lab01/data.json") as data:
         location=json.load(data)
         df = pd.DataFrame(location[0])
         choices=df["Stock"]
@@ -53,7 +53,7 @@ def jasonstatic():
     "Google": "#D5CF54", 
     "American Express": "#BEB3BC6A", 
 }
-    with open("data.json") as data:
+    with open("Lab01/data.json") as data:
         stocks=json.load(data)
         stock=stocks[0]
     df = pd.DataFrame(dict(Stock=stock["Stock"], IPO=stock["start"], Today="2026-10-15", Key=stock["color"]))
@@ -63,7 +63,7 @@ def jasonstatic():
 
 
 def csvstatic():
-    with open("data.csv","r") as data:
+    with open("Lab01/data.csv","r") as data:
         money=[]
         male=[]
         female=[]
@@ -82,7 +82,7 @@ def csvstatic():
     st.plotly_chart(fig)
 
 def csvdynamic():
-    with open("data.csv","r") as data:
+    with open("Lab01/data.csv","r") as data:
         everything={}
         yes=csv.DictReader(data)
         for row in yes:
