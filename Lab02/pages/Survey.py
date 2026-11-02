@@ -41,7 +41,7 @@ with st.form("survey_form"):
         #    - Make sure to open the file in 'append' mode ('a').
         #    - Don't forget to add a newline character '\n' at the end.
         stuff={"Name":nameinput,"Male":maleinput,"Female":femaleinput, "Money":moneyinput}
-        with open("Lab01/data.csv","a") as data:
+        with open("Lab02/data.csv","a") as data:
             write=csv.DictWriter(data,fieldnames=["Name","Male","Female","Money"])
             write.writerow(stuff)
 
@@ -56,9 +56,9 @@ st.divider() # Adds a horizontal line for visual separation.
 st.header("Current Data in CSV")
 
 # Check if the CSV file exists and is not empty before trying to read it.
-if os.path.exists('Lab01/data.csv') and os.path.getsize('Lab01/data.csv') > 0:
+if os.path.exists('Lab02/data.csv') and os.path.getsize('Lab02/data.csv') > 0:
     # Read the CSV file into a pandas DataFrame.
-    current_data_df = pd.read_csv('Lab01/data.csv')
+    current_data_df = pd.read_csv('Lab02/data.csv')
     # Display the DataFrame as a table.
     st.dataframe(current_data_df)
 else:
